@@ -53,7 +53,7 @@ namespace AddressBookIO
                     while (flag2)
                     {
                         Console.WriteLine("\nCurrent address book:" + currentAddressBookName);
-                        Console.WriteLine("Enter:\n1-To add a new contact\n2-To edit an existing contact\n3-To search for an existing contact\n4-To delete a contact\n5-To display all contacts in the address book sorted by Name\n6-To display contacts sorted by city,state or zip\n7-To Write and then Read all contacts into a txt file\n8-To Write/Read contact details into the addressBook CSV file\n9-To return to main menu");
+                        Console.WriteLine("Enter:\n1-To add a new contact\n2-To edit an existing contact\n3-To search for an existing contact\n4-To delete a contact\n5-To display all contacts in the address book sorted by Name\n6-To display contacts sorted by city,state or zip\n7-To Write and then Read all contacts into a txt file\n8-To Write/Read contact details into the addressBook CSV file\n9-To Write/Read contact details into the addressBook json file\n10-To return to main menu");
                         int options2 = Convert.ToInt32(Console.ReadLine());
                         switch (options2)
                         {
@@ -90,6 +90,17 @@ namespace AddressBookIO
                                     FileIOStream.CSVFileReading(addressBookList.addressBookListDictionary[currentAddressBookName]);
                                 break;
                             case 9:
+                                Console.WriteLine("press\n1-To Write\n2-To Read");
+                                int opt = Convert.ToInt32(Console.ReadLine());
+                                if (opt == 1)
+                                {
+                                    FileIOStream.JSONFileWriting(addressBookList.addressBookListDictionary[currentAddressBookName]);
+                                    Console.WriteLine("File created/Details added successfully");
+                                }
+                                else if (opt == 2)
+                                    FileIOStream.JSONFileReading(addressBookList.addressBookListDictionary[currentAddressBookName]);
+                                break;
+                            case 10:
                                 flag2 = false;
                                 break;
                         }
