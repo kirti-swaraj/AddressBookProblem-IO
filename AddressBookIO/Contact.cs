@@ -15,14 +15,14 @@ namespace AddressBookIO
     /// </summary>
     public class Contact
     {
-        public string firstName;
-        public string lastName;
-        public string address;
-        public string city;
-        public string state;
-        public double zip;
-        public double phoneNumber;
-        public string email;
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+        public string address { get; set; }
+        public string city { get; set; }
+        public string state { get; set; }
+        public double zip { get; set; }
+        public double phoneNumber { get; set; }
+        public string email { get; set; }
 
         /// <summary>
         /// INITIALIZES A NEW INSTANCE OF CONTACT CLASS
